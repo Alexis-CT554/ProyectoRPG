@@ -91,6 +91,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   swordDamage: 1
+  knockbackForce: 15
   swordCollider: {fileID: 8772669626973625359}
   faceRight: {x: 0.116, y: -0.054, z: 0}
   faceLeft: {x: -0.116, y: -0.054, z: 0}
@@ -109,6 +110,7 @@ GameObject:
   - component: {fileID: 2929792316740150878}
   - component: {fileID: 2643981472590000588}
   - component: {fileID: 8650221633926252974}
+  - component: {fileID: 3503281629278646316}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -196,8 +198,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d8acd7f8ec488646882c617d7b7aefb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 150
-  maxSpeed: 8
+  moveSpeed: 1200
+  maxSpeed: 5
   idleFriction: 0.9
   swordHitBox: {fileID: 1378770822709492317}
 --- !u!50 &4664699813214106275
@@ -213,8 +215,8 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_LinearDrag: 0.5
+  m_AngularDrag: 0.5
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -313,3 +315,20 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &3503281629278646316
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6367113108378257679}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf828958ea63767418f1fb847327c50b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthText: {fileID: 8622190321253405453, guid: a025fe31d350a0f42acb467b61d46df0, type: 3}
+  disableSimulation: 1
+  canTurnInvincible: 0
+  invicibilityTime: 0.3
+  _invincible: 0

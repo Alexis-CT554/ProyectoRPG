@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,7 +12,7 @@ public class PlayerContoller : MonoBehaviour
             animator.SetBool("isMoving", isMoving);
         }
     }
-    public float moveSpeed = 150f;
+    public float moveSpeed = 500f;
     public float maxSpeed = 8f;
     public float idleFriction = 0.9f;
 
@@ -39,7 +40,13 @@ public class PlayerContoller : MonoBehaviour
     {
         if (canMove == true && moveInput != Vector2.zero)
         {
-            rb.velocity = Vector2.ClampMagnitude(rb.velocity + (moveInput * moveSpeed * Time.deltaTime), maxSpeed);
+            //rb.velocity = Vector2.ClampMagnitude(rb.velocity + (moveInput * moveSpeed * Time.deltaTime), maxSpeed);
+            rb.AddForce(moveInput * moveSpeed * Time.deltaTime);
+
+            if (rb.velocity.magnitude > maxSpeed){
+                float limitedSpeed = Mathf.Lerp(rb.velocity.magnitude, maxSpeed, idleFriction);
+                rb.velocity = rb.velocity.normalized * limitedSpeed;
+            }
             if (moveInput.x > 0){
                 spriteRenderer.flipX = false;
                 gameObject.BroadcastMessage("IsFacingRight", true);

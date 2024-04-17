@@ -8,6 +8,7 @@ TagManager:
   - portal2
   - portal3
   - Enemy
+  - Canvas
   layers:
   - Default
   - TransparentFX
