@@ -9,6 +9,9 @@ TagManager:
   - portal3
   - Enemy
   - Canvas
+  - portal4
+  - portal5
+  - portal6
   layers:
   - Default
   - TransparentFX
