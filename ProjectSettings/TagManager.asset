@@ -12,6 +12,8 @@ TagManager:
   - portal4
   - portal5
   - portal6
+  - portal7
+  - portal8
   layers:
   - Default
   - TransparentFX

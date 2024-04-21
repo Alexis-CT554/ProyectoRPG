@@ -52,6 +52,20 @@ public class MovCamara : MonoBehaviour
             this.transform.position = posicionPlayer;
 
         }
+         if(obj.gameObject.tag == "portal7"){
+            Vector3 posicioncamara = new Vector3(-247.8f, 6.6f, 0);  //POSICION CAMERA
+            camara.transform.position = posicioncamara;
+            Vector3 posicionPlayer = new Vector3(-247.8f, 6.6f, 0); //POSICION PERSONAJE
+            this.transform.position = posicionPlayer;
+
+        }
+       if(obj.gameObject.tag == "portal8"){
+            Vector3 posicioncamara = new Vector3(-46.6f, 3.5f, 0);  //POSICION CAMERA
+            camara.transform.position = posicioncamara;
+            Vector3 posicionPlayer = new Vector3(-46.6f, 3.5f, 0); //POSICION PERSONAJE
+            this.transform.position = posicionPlayer;
+
+        }
     
     }
 }
